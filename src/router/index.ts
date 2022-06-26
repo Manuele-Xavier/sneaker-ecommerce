@@ -8,6 +8,11 @@ const routes: Array<RouteRecordRaw> = [
     component: Home,
   },
   {
+    path: '/cart',
+    name: 'Cart',
+    component: () => import( '../views/Cart.vue'),
+  },
+  {
     path: '/item:id',
     name: 'Product',
     component: () => import( '../views/Product-Item.vue'),

@@ -1,57 +1,53 @@
 <template>
     <div id="product-item" class="row">
         <div class="col-sm-6">
-            <img :src="product.Image" />
+            <img :src="product.image" />
         </div>
         <div class="col-sm-6">
-            <h2>{{ product.Title }}</h2>
+            <h2>{{ product.title }}</h2>
             <strong class="text-title">{{ Intl.NumberFormat('pt-br', {
                     style: 'currency', currency: 'BRL'
-                }).format(product.Price)
+                }).format(product.price)
             }}</strong>
             <hr />
-            <div v-html="product.Description" class="mb-4"></div>
-            <div class="d-flex mb-4 sizes">
-                <div v-for="size in product.Sizes" class="me-2">
-                    <button :disable="size.Active">{{size.Number}}</button>
-                </div>
-            </div>
-            <button class="add">Adicionar ao carrinho</button>
+            <div v-html="product.description" class="mb-4"></div>
+            <button class="add" data-bs-toggle="modal" data-bs-target="#infoModal">Adicionar ao carrinho</button>
         </div>
+        <Modal :msg="'Produto adicionado ao carrinho!'" />
     </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
 
+import Modal from '../components/Modal.vue'
+import { defineComponent } from 'vue'
+declare interface Product {
+    id: number,
+    image:string,
+    description:string,
+    title: string,
+    price: number
+  }
 export default defineComponent({
+    components: {
+        Modal
+    },
     data() {
         return {
-            product:
-            {
-                Id: 1,
-                Title: "Air Jordan 1",
-                Price: 1000,
-                Date: '2022-06-20',
-                Image: 'https://images.lojanike.com.br/500x500/produto/tenis-air-jordan-1-low-553558-163-1-11648573707.jpg',
-                Description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-                Sizes:[
-                   {
-                    Number:'39', 
-                    Active:false
-                   
-                   },
-                    {
-                    Number:'40', 
-                    Active:false
-                   
-                   }, {
-                    Number:'41', 
-                    Active:false
-                   
-                   }
-                ]
-            }
+            product: {} as Product
+           
+        }
+    },
+    created(){
+        this.getProduct()
+    },
+    methods:{
+
+         getProduct(){
+            fetch(`https://62b8dcf903c36cb9b7cc9aec.mockapi.io/sneakers/${this.$route.params.id}`)
+            .then(resp=> resp.json())
+            .then(data=> this.product = data)
+            
         }
     }
 })
@@ -59,8 +55,8 @@ export default defineComponent({
 
 <style lang="scss">
 #product-item {
-    .sizes{
-        button{
+    .sizes {
+        button {
             background-color: #fff;
         }
     }
@@ -74,7 +70,7 @@ export default defineComponent({
         position: relative;
         font-weight: 700;
         font-size: 17px;
-       
+
         transition: all 250ms;
         overflow: hidden;
 
@@ -93,15 +89,32 @@ export default defineComponent({
             transition: all 250ms
         }
 
-        &:hover{
+        &:hover {
             color: #fff;
 
-            &::before{
+            &::before {
                 width: 100%;
             }
         }
 
-    
+
     }
+
+    .modal-body {
+        p {
+            font-size: 30px;
+        }
+
+        .add {
+            &::before {
+                content: none;
+            }
+
+            &:hover {
+                color: #000000;
+            }
+        }
+    }
+
 }
 </style>

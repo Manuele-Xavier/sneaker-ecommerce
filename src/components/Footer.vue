@@ -8,10 +8,10 @@
                 <a href="#" class="me-3">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-                <a  href="#" class="me-3">
+                <a href="#" class="me-3">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a  href="#">
+                <a href="#">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
             </div>
@@ -23,16 +23,18 @@
 </script>
 
 <style lang="scss">
-    footer{
-      p{
+footer {
+    p {
         color: #fff;
-      }
-      a{
+    }
+
+    a {
         color: #fff;
         font-size: 20px;
-        &:hover{
+
+        &:hover {
             color: #fff;
         }
-      }
     }
+}
 </style>

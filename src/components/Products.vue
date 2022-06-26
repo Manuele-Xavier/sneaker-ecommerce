@@ -1,14 +1,17 @@
 <template>
-    <div id="products" class="row" >
-        <div v-for="item in products" class="col-lg-3 col-sm-6" :key="item.Id">
-            <router-link :to="{ path: '/item', name: 'Product', params: { id: item.Id } }">
+    <div id="products" class="row">
+        <div v-for="item in products" class="col-lg-3 col-sm-6" :key="item.id">
+            <router-link :to="{ path: '/item', name: 'Product', params: { id: item.id } }">
                 <div class="card">
                     <div class="card-img">
-                        <img :src="item.Image"/>
+                        <img class="w-100" :src="item.image" />
                     </div>
                     <div class="card-info p-3">
-                        <p class="text-title">{{item.Title}}</p>
-                        <strong class="text-title">{{Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL' }).format(item.Price)}}</strong>
+                        <p class="text-title">{{ item.title }}</p>
+                        <strong class="text-title">{{ Intl.NumberFormat('pt-br', {
+                                style: 'currency', currency: 'BRL'
+                            }).format(item.price)
+                        }}</strong>
                     </div>
                 </div>
             </router-link>
@@ -18,105 +21,66 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-
+declare interface Products {
+    id: number,
+    image:string,
+    title: string,
+    price: number
+  }
 export default defineComponent({
     data() {
         return {
-            products: [	{
-		    Id: 1,
-		    Title: "Dunk Low Retro",
-		    Price: 799.99,
-		    Date: '2022-06-20',
-		    Description:'Criado para as quadras e adotado pela moda urbana, o ícone do basquete dos anos 80 está de volta com detalhes clássicos e o estilo vintage do basquete. A boca almofadada e de cano baixo e a entressola de espuma elevam o nível do seu jogo com muito conforto.',
-            Image: 'https://images.lojanike.com.br/1024x1024/produto/tenis-nike-dunk-low-retro-masculino-DJ6188-300-1-11648574078.jpg',
-		    Sizes:[{Number:'39', Active:false},{Number:'40', Active:false}, {Number:'41', Active:false}]
-               },
-		{
-		    Id: 2,
-		    Title: "Air Jordan 1 Mid SE",
-		    Price: 1099.99,
-		    Date: '2022-06-21',
-		    Description:'O tênis Air Jordan 1 Mid é inspirado no primeiro modelo AJ1, oferecendo aos fãs dos Jordan retrôs a oportunidade de seguir os passos da grandeza. A cor nova dá acabamento aos materiais limpos e clássicos, adicionando uma novidade no design familiar.',
-            Image: 'https://images.lojanike.com.br/500x500/produto/tenis-air-jordan-1-mid-se-v2-DN4281-100-1-11640098899.jpg',
-		    Sizes:[{Number:'39', Active:false},{Number:'40', Active:false}, {Number:'41', Active:false}]
-               },
-		{
-		    Id: 3,
-		    Title: "Air Jordan 1 Mid",
-		    Price: 999.99,
-		    Date: '2022-06-26',
-		    Description:'O tênis Air Jordan 1 Mid é inspirado no primeiro modelo AJ1, oferecendo aos fãs dos Jordan retrôs a oportunidade de seguir os passos da grandeza. A cor nova dá acabamento aos materiais limpos e clássicos, adicionando uma novidade no design familiar.',
-            Image: 'https://images.lojanike.com.br/500x500/produto/tenis-air-jordan-1-mid-554724-411-1-11628865989.jpg',
-		    Sizes:[{Number:'39', Active:false},{Number:'40', Active:false}, {Number:'41', Active:false}]
-               },
-		{
-		    Id: 4,
-		    Title: "Tênis Air Jordan 1 Low",
-		    Price: 899.99,
-		    Date: '2022-06-27',
-		    Description:'Inspirado no original que estreou em 1985, o Air Jordan 1 Low oferece um visual clássico e limpo, mas sempre atual. Com um design icônico que combina perfeitamente com qualquer outfit, estes tênis deixam você preparado para tudo.',
-            Image: 'https://images.lojanike.com.br/500x500/produto/tenis-air-jordan-1-low-553558-163-1-11648573707.jpg',
-		    Sizes:[{Number:'39', Active:false},{Number:'40', Active:false}, {Number:'41', Active:false}]
-               },
-		{
-		    Id: 5,
-		    Title: "Air Force 1 '07 SE",
-		    Price: 799.99,
-		    Date: '2022-06-26',
-		    Description:'O brilho perdura no original do basquete. Combinando o conforto da quadra com um brilho casual, ele renova aquele look que você já conhece bem: construção dos anos 80 que marcou época, detalhes ousados e estilo esportivo.',
-            Image: 'https://images.lojanike.com.br/500x500/produto/tenis-wmns-air-force-1-07-se-trnd-DQ0231-100-1-11646344485.jpg',
-		    Sizes:[{Number:'39', Active:false},{Number:'40', Active:false}, {Number:'41', Active:false}]
-               },
-		{
-		    Id: 6,
-		    Title: "Dunk Hi Retro Cargo Khaki",
-		    Price: 849.99,
-		    Date: '2022-06-27',
-		    Description:'Criado para as quadras, mas levado para as ruas, o ícone do basquete dos anos 80 retorna com sobreposições perfeitamente brilhantes e cores originais da universidade. Com seu design clássico de sempre, o Nike Dunk High Retro traz o vintage dos anos 80 de volta às ruas, enquanto sua lingua alta acolchoada adiciona um visual old-school enraizado no conforto.',
-                    Image: 'https://images.lojanike.com.br/515x515/produto/tenis-nike-sportswear-dunk-high-retro-masculino-DD1399-107-1-11637853753.jpg',
-		    Sizes:[{Number:'39', Active:false},{Number:'40', Active:false}, {Number:'41', Active:false}]
-               },
-			
-               
-            ]
+            products: [] as Products[]
+        }
+    },
+    created(){
+        this.getProducts()
+    },
+    methods:{
+     
+        getProducts(){
+            fetch("https://62b8dcf903c36cb9b7cc9aec.mockapi.io/sneakers/")
+            .then(resp=> resp.json())
+            .then(data=> this.products = data)
         }
     }
 })
+
 </script>
 
 <style lang="scss">
-
-    #products{
-        a{
-            color: #000;
-            text-decoration: none;
-        }
-        .card{
-            background-color: #F6F6F6;
-            border-color: #F6F6F6;
-            border-radius: 6px;
-            transition: 0.4s ease-out;
-             margin-bottom: 35px;
-        
-            &:hover{
-                transform: translateY(5%);
-                opacity: 1;
-                
-            }
-           
-        }
-        img{
-            width: 100%;
-            object-fit: cover;
-            height: 235px;
-        }
-        .add{
-            background: #000;
-            padding: 5px 10px;
-            border-radius: 100%;
-            color: #fff;
-            font-size: 20px;
-        }
+#products {
+    a {
+        color: #000;
+        text-decoration: none;
     }
 
+    .card {
+        background-color: #F6F6F6;
+        border-color: #F6F6F6;
+        border-radius: 6px;
+        transition: 0.4s ease-out;
+        margin-bottom: 35px;
+
+        &:hover {
+            transform: translateY(5%);
+            opacity: 1;
+
+        }
+
+    }
+
+    img {
+        object-fit: cover;
+        height: 235px;
+    }
+
+    .add {
+        background: #000;
+        padding: 5px 10px;
+        border-radius: 100%;
+        color: #fff;
+        font-size: 20px;
+    }
+}
 </style>

@@ -4,31 +4,25 @@
             <nav class="navbar navbar-expand-lg navbar-light ">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
-                        <img src="../../public/white-logo.png" alt="logo hard sneaker"/>
+                        <img src="../../public/white-logo.png" alt="logo hard sneaker" />
                     </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse justify-content-end me-5" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            <a class="nav-link" href="#">Novidades</a>
+                            <router-link :to="{ path: '/' }" class="nav-link active" aria-current="page">Home
+                            </router-link>
                         </div>
                     </div>
                     <div>
-                        <a class="car me-4">
+                        <router-link class="car me-3" :to="{ path: '/cart' }" aria-current="page">
                             <span>
                                 <i class="fas fa-cart-plus"></i>
                             </span>
-                        </a>
-                    </div>
-                    <div>
-                        <a class="search">
-                            <span>
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </span>
-                        </a>
+                        </router-link>
                     </div>
                 </div>
             </nav>
@@ -40,27 +34,30 @@
 </script>
 
 <style lang="scss">
-    header{
-        .navbar{
-            img{
-                width: 200px;
-            }
-            .navbar-nav{
-                a{
-                    color: #fff !important;
-                    transition: 0.4s ease-out;
-                    &:hover{
-                        font-weight: 600;
-                    }
-                }
-            }
+header {
+    .navbar {
+        img {
+            width: 200px;
+        }
 
-            .car, .search{
-                i{
-                    font-size: 20px;
-                    color: #fff;
+        .navbar-nav {
+            a {
+                color: #fff !important;
+                transition: 0.4s ease-out;
+
+                &:hover {
+                    font-weight: 600;
                 }
             }
         }
+
+        .car,
+        .search {
+            i {
+                font-size: 20px;
+                color: #fff;
+            }
+        }
     }
+}
 </style>
