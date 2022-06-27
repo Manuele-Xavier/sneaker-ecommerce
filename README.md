@@ -23,5 +23,5 @@ Abrir http://localhost:5000 no browser.
 
 
 
-## Recommended IDE Setup
+## Recomendedação IDE Setup
 - [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
