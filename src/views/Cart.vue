@@ -154,10 +154,11 @@ export default defineComponent({
 #cart {
     table {
         td {
-            a{
+            a {
                 color: #000;
                 text-decoration: none;
             }
+
             vertical-align: middle;
 
             img {
@@ -192,6 +193,26 @@ export default defineComponent({
             position: relative;
             font-weight: 700;
             font-size: 17px;
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 540px) {
+    .table {
+        img {
+            display: none;
+        }
+
+        tr {
+
+            th,
+            td {
+                &:nth-child(2) {
+                    display: none;
+                }
+            }
         }
     }
 }

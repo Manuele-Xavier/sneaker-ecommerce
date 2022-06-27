@@ -9,7 +9,9 @@
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                         aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                        <span class="icon">
+                            <i class="fas fa-bars"></i>
+                        </span>
                     </button>
                     <div class="collapse navbar-collapse justify-content-end me-5" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
@@ -31,7 +33,7 @@
 </template>
 
 <script setup lang="ts">
-    
+
 </script>
 
 <style lang="scss">
@@ -39,6 +41,11 @@ header {
     .navbar {
         img {
             width: 200px;
+        }
+
+        button {
+            border-color: #fff;
+            color: #fff;
         }
 
         .navbar-nav {

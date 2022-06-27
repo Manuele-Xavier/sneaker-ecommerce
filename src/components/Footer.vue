@@ -2,7 +2,7 @@
     <footer class="bg-dark pt-3">
         <div class="container d-flex w-100 justify-content-between">
             <div>
-                <p>©2022</p>
+                <p>Hard Sneaker©2022</p>
             </div>
             <div class="d-flex">
                 <a href="#" class="me-3">

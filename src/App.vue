@@ -15,3 +15,10 @@
   import Footer from './components/Footer.vue'
 </script>
 
+<style lang="scss">
+main{
+  min-height: 90vh;
+}
+</style>
+
+

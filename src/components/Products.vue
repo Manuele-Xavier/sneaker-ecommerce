@@ -23,25 +23,25 @@
 import { defineComponent } from 'vue'
 declare interface Products {
     id: number,
-    image:string,
+    image: string,
     title: string,
     price: number
-  }
+}
 export default defineComponent({
     data() {
         return {
             products: [] as Products[]
         }
     },
-    created(){
+    created() {
         this.getProducts()
     },
-    methods:{
-     
-        getProducts(){
+    methods: {
+
+        getProducts() {
             fetch("https://62b8dcf903c36cb9b7cc9aec.mockapi.io/sneakers/")
-            .then(resp=> resp.json())
-            .then(data=> this.products = data)
+                .then(resp => resp.json())
+                .then(data => this.products = data)
         }
     }
 })
