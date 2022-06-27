@@ -3,9 +3,9 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light ">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
+                    <router-link :to="{ path: '/' }" class="navbar-brand">
                         <img src="../../public/white-logo.png" alt="logo hard sneaker" />
-                    </a>
+                    </router-link>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -31,6 +31,7 @@
 </template>
 
 <script setup lang="ts">
+    
 </script>
 
 <style lang="scss">
