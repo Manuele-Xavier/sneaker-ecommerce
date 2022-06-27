@@ -121,6 +121,8 @@ export default defineComponent({
         },
         updatedProducts(item: ProductsCart) {
             item.addedToCart = false
+            item.finalPrice = item.price
+            item.value = 1
             const requestOptions = {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
