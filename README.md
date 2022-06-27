@@ -1,4 +1,5 @@
 ## sneaker-ecommerce
+<a href="https://sneaker-ecommerce.vercel.app/">Link da aplicação</a>
 
 ### 🖥️ Iniciar projeto
 
@@ -21,7 +22,6 @@ Abrir http://localhost:5000 no browser.
 - TypeScript
 
 
-<a href="https://sneaker-ecommerce.vercel.app/">Link da aplicação</a>
 
 ## Recommended IDE Setup
 - [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
