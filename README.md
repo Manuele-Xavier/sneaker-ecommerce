@@ -1,7 +1,27 @@
-# Vue 3 + Vite
+## sneaker-ecommerce
+<a href="https://sneaker-ecommerce.vercel.app/">Link da aplicação</a>
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+### 🖥️ Iniciar projeto
 
-## Recommended IDE Setup
+#### `yarn dev`
+Abrir http://localhost:5000 no browser.
 
+### 📚 Páginas
+
+- Home: Seleção de produtos
+- Carrinho: Carrinho onde sera feito a confirmação da compra
+- Produto: Detalhes do produto selecionado
+
+### 🔨 Ferramentas utilizadas
+
+- HTML
+- CSS
+- SASS
+- Vue 3
+- Vite
+- TypeScript
+
+
+
+## Recomendação IDE Setup
 - [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
