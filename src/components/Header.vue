@@ -31,11 +31,6 @@
         </div>
     </header>
 </template>
-
-<script setup lang="ts">
-
-</script>
-
 <style lang="scss">
 header {
     .navbar {
@@ -44,8 +39,8 @@ header {
         }
 
         button {
-            border-color: #fff;
-            color: #fff;
+            border-color: #fff !important;
+            color: #fff !important;
         }
 
         .navbar-nav {
