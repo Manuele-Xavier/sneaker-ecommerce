@@ -3,9 +3,9 @@
         <h2 class="pb-4">Clássicos que não saem de moda</h2>
         <div class="item d-flex flex-column justify-center align-items-center">
             <div class="div-img">
-                <a>
+                 <router-link :to="{ path: '/products?', name: 'Products', query: { categoria: 'Classic'} }">
                     <img class="w-100" :src="img" />
-                </a>
+                 </router-link>
             </div>
             <p class="text-center mt-2">Venha conhecer aqueles que não pode ficar de fora do seu armário</p>
             <button type="button">Visualizar Produtos</button>

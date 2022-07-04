@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div id="products" class="row">
-            <div v-for="item in products" class="col-lg-3 col-sm-6" :key="item.id">
+            <div v-if="products.length > 0" v-for="item in products" class="col-lg-3 col-sm-6" :key="item.id">
                 <router-link :to="{ path: '/item', name: 'Product', params: { id: item.id } }">
                     <div class="card">
                         <div class="card-img">
@@ -16,6 +16,9 @@
                         </div>
                     </div>
                 </router-link>
+            </div>
+            <div v-else>
+                <p>Sem resultado encontrado.</p>
             </div>
         </div>
     </div>
@@ -41,7 +44,18 @@ export default defineComponent({
     methods: {
 
         getProducts() {
-            fetch("https://62b8dcf903c36cb9b7cc9aec.mockapi.io/sneakers/")
+            let filter = null
+            let query = this.$route.query
+            debugger
+            if(query){
+                if(query.marca){
+                    filter = `?marca=${this.$route.query.marca}`
+                }
+                if(query.categoria){
+                    filter = `?categoria=${this.$route.query.categoria}`
+                }
+            }
+            fetch(`https://62b8dcf903c36cb9b7cc9aec.mockapi.io/sneakers${filter}`)
                 .then(resp => resp.json())
                 .then(data => this.products = data)
         }

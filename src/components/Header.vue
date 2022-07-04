@@ -34,10 +34,6 @@
 <style lang="scss">
 header {
     .navbar {
-        img {
-            width: 120px;
-        }
-
         button {
             border-color: #000 !important;
             color: #000 !important;

@@ -3,12 +3,12 @@
         <h2 class="pb-4">Casual</h2>
         <div class="item d-flex flex-column justify-center align-items-center">
             <div class="row w-100">
-                <a class="col-sm-6">
+               <router-link class="col-sm-6" :to="{ path: '/products?', name: 'Products', query: { categoria: 'Casual'} }">
                     <img class="w-100" :src="imgOne" />
-                </a>
-                <a class="col-sm-6">
+               </router-link>
+                <router-link class="col-sm-6" :to="{ path: '/products?', name: 'Products', query: { categoria: 'Casual'} }">
                     <img class="w-100" :src="imgTwo" />
-                </a>
+                </router-link>
             </div>
             <p class="text-center mt-2">Para todos os momentos.</p>
             <button type="button">Visualizar Produtos</button>

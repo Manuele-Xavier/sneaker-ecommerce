@@ -26,7 +26,8 @@
                                 <td>
                                     {{ formarMoney(item.price) }}
                                 </td>
-                                <td><input type="number" v-model="item.value" id="quantity" name="quantity" min="1" max="5"
+                                <td>
+                                    <input type="number" v-model="item.value" id="quantity" name="quantity" min="1" max="5"
                                         @change="onChangeQuantity(item)" /></td>
                                 <td><strong>{{ formarMoney(item.finalPrice) }}</strong></td>
                                 <td>

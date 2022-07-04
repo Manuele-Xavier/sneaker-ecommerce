@@ -4,9 +4,9 @@
         <div v-for="item in marcas" class="col-sm-4" :key="item.id">
             <div class="item">
                 <h3 class="p-4 text-center">{{ item.title }}</h3>
-                <a class="link-products">
+                <router-link class="link-products" :to="{ path: '/products?', name: 'Products', query: { marca: `${item.title}` } }">
                     <img class="w-100" :src="item.image" />
-                </a>
+                </router-link>
             </div>
         </div>
     </section>
