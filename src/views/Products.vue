@@ -1,20 +1,22 @@
 <template>
-    <div id="products" class="row">
-        <div v-for="item in products" class="col-lg-3 col-sm-6" :key="item.id">
-            <router-link :to="{ path: '/item', name: 'Product', params: { id: item.id } }">
-                <div class="card">
-                    <div class="card-img">
-                        <img class="w-100" :src="item.image" />
+    <div class="container">
+        <div id="products" class="row">
+            <div v-for="item in products" class="col-lg-3 col-sm-6" :key="item.id">
+                <router-link :to="{ path: '/item', name: 'Product', params: { id: item.id } }">
+                    <div class="card">
+                        <div class="card-img">
+                            <img class="w-100" :src="item.image" />
+                        </div>
+                        <div class="card-info p-3">
+                            <p class="text-title">{{ item.title }}</p>
+                            <strong class="text-title">{{ Intl.NumberFormat('pt-br', {
+                                    style: 'currency', currency: 'BRL'
+                                }).format(item.price)
+                            }}</strong>
+                        </div>
                     </div>
-                    <div class="card-info p-3">
-                        <p class="text-title">{{ item.title }}</p>
-                        <strong class="text-title">{{ Intl.NumberFormat('pt-br', {
-                                style: 'currency', currency: 'BRL'
-                            }).format(item.price)
-                        }}</strong>
-                    </div>
-                </div>
-            </router-link>
+                </router-link>
+            </div>
         </div>
     </div>
 </template>

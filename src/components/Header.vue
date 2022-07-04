@@ -1,10 +1,10 @@
 <template>
-    <header class="bg-dark py-2">
+    <header class="py-2">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light ">
                 <div class="container-fluid">
                     <router-link :to="{ path: '/' }" class="navbar-brand">
-                        <img src="../../public/white-logo.png" alt="logo hard sneaker" />
+                        <img src="../assets/logo.png" alt="logo hard sneaker" />
                     </router-link>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
@@ -35,21 +35,24 @@
 header {
     .navbar {
         img {
-            width: 200px;
+            width: 120px;
         }
 
         button {
-            border-color: #fff !important;
-            color: #fff !important;
+            border-color: #000 !important;
+            color: #000 !important;
         }
 
         .navbar-nav {
             a {
-                color: #fff !important;
+                color: #6f6f6f !important;
                 transition: 0.4s ease-out;
-
+                position: relative;
+                font-weight: bolder;
+                text-transform: uppercase;
                 &:hover {
-                    font-weight: 600;
+                   color: #000 !important; 
+
                 }
             }
         }
@@ -58,7 +61,7 @@ header {
         .search {
             i {
                 font-size: 20px;
-                color: #fff;
+                color: #6f6f6f !important;
             }
         }
     }

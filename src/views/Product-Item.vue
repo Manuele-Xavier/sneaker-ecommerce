@@ -1,20 +1,22 @@
 <template>
-    <div id="product-item" class="row">
-        <div class="col-sm-6">
-            <img :src="product.image" class="w-100" />
+    <div class="container pt-5">
+        <div id="product-item" class="row">
+            <div class="col-sm-6">
+                <img :src="product.image" class="w-100" />
+            </div>
+            <div class="col-sm-6">
+                <h2>{{ product.title }}</h2>
+                <strong class="text-title">{{ Intl.NumberFormat('pt-br', {
+                        style: 'currency', currency: 'BRL'
+                    }).format(product.price)
+                }}</strong>
+                <hr />
+                <div v-html="product.description" class="mb-4"></div>
+                <button class="add" @click="updatedProduct(product)" data-bs-toggle="modal"
+                    data-bs-target="#infoModal">Adicionar ao carrinho</button>
+            </div>
+            <Modal :msg="msg" />
         </div>
-        <div class="col-sm-6">
-            <h2>{{ product.title }}</h2>
-            <strong class="text-title">{{ Intl.NumberFormat('pt-br', {
-                    style: 'currency', currency: 'BRL'
-                }).format(product.price)
-            }}</strong>
-            <hr />
-            <div v-html="product.description" class="mb-4"></div>
-            <button class="add" @click="updatedProduct(product)" data-bs-toggle="modal"
-                data-bs-target="#infoModal">Adicionar ao carrinho</button>
-        </div>
-        <Modal :msg="msg" />
     </div>
 </template>
 

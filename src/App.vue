@@ -2,9 +2,7 @@
   <div>
     <Header/>
     <main>
-      <div class="container py-5">
         <router-view />
-      </div>
     </main>
     <Footer/>
   </div>

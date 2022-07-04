@@ -1,0 +1,33 @@
+<template>
+    <section id="casual" class="row mt-5">
+        <h2 class="pb-4">Casual</h2>
+        <div class="item d-flex flex-column justify-center align-items-center">
+            <div class="row w-100">
+                <a class="col-sm-6">
+                    <img class="w-100" :src="imgOne" />
+                </a>
+                <a class="col-sm-6">
+                    <img class="w-100" :src="imgTwo" />
+                </a>
+            </div>
+            <p class="text-center mt-2">Para todos os momentos.</p>
+            <button type="button">Visualizar Produtos</button>
+        </div>
+    </section>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+export default defineComponent({
+    data() {
+        return {
+            imgOne: "https://images.unsplash.com/photo-1642154015869-3b2b06cbe0b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+            imgTwo: "https://images.unsplash.com/photo-1542587113-f888b89821ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        }
+    }
+
+})
+
+</script>
+
+
