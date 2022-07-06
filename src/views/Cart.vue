@@ -53,7 +53,7 @@
             </div>
             <div v-else class="redirect mt-5">
                 <p>Seu carrinho esta vazio no momento.</p>
-                <button @click="$router.push('/')" type="button">Selcecionar Produtos</button>
+                <button @click="$router.push('/products')" type="button">Selcecionar Produtos</button>
             </div>
             <Modal :msg="'Pagamento realizado com sucesso!'" :show-btn-primary="false" />
         </div>

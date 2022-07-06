@@ -17,6 +17,8 @@
                         <div class="navbar-nav">
                             <router-link :to="{ path: '/' }" class="nav-link active" aria-current="page">Home
                             </router-link>
+                            <router-link :to="{ path: '/products' }" class="nav-link active" aria-current="page">Produtos
+                            </router-link>
                         </div>
                     </div>
                     <div>
@@ -52,7 +54,6 @@ header {
                 }
             }
         }
-
         .car,
         .search {
             i {

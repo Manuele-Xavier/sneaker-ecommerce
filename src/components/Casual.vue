@@ -11,7 +11,7 @@
                 </router-link>
             </div>
             <p class="text-center mt-2">Para todos os momentos.</p>
-            <button type="button">Visualizar Produtos</button>
+            <button @click="$router.push({ path: '/products?', name: 'Products', query: { categoria: 'Casual'} })" type="button">Visualizar Produtos</button>
         </div>
     </section>
 </template>

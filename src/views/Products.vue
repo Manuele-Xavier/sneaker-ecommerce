@@ -44,7 +44,7 @@ export default defineComponent({
     methods: {
 
         getProducts() {
-            let filter = null
+            let filter = '/'
             let query = this.$route.query
             debugger
             if(query){

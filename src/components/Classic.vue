@@ -8,7 +8,7 @@
                  </router-link>
             </div>
             <p class="text-center mt-2">Venha conhecer aqueles que não pode ficar de fora do seu armário</p>
-            <button type="button">Visualizar Produtos</button>
+            <button type="button" @click="$router.push({path: '/products?', name: 'Products', query: { categoria: 'Classic'} })">Visualizar Produtos</button>
         </div>
     </section>
 </template>
